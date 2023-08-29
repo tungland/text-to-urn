@@ -6,6 +6,12 @@ PATTERN = re.compile(r"URN:NBN:no-nb[a-zA-Z0-9_]+")
 
 # Define the Streamlit app
 def app():
+    st.set_page_config(
+        page_title="Tekst til URN",
+        page_icon="🔍",
+        layout="wide",
+    )
+    
     # Set the app title
     st.title("Tekst til URN")
 
@@ -40,7 +46,7 @@ def app():
         )
 
         # Display the results as a Pandas dataframe
-        st.dataframe(results)
+        st.dataframe(results, use_container_width=True)
 
 # Run the Streamlit app
 if __name__ == "__main__":
